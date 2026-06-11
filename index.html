@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestige Realty</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background:#f7f5f2;
+    color:#1f2430;
+    line-height:1.6;
+}
+img{
+    max-width:100%;
+    display:block;
+}
+a{
+    text-decoration:none;
+}
+header{
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 30px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+.logo-icon{
+    width:60px;
+    height:60px;
+    background:#d48127;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:24px;
+}
+.logo h1{
+    font-size:2rem;
+}
+.logo span{
+    color:#d48127;
+}
+.menu{
+    font-size:2rem;
+    cursor:pointer;
+    background:none;
+    border:none;
+}
+.hero{
+    margin:30px;
+    border-radius:30px;
+    overflow:hidden;
+    position:relative;
+}
+.hero img{
+    height:650px;
+    width:100%;
+    object-fit:cover;
+}
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:40px;
+    color:white;
+}
+.tag{
+    color:#d48127;
+    font-weight:bold;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+.hero h2{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+.hero p{
+    max-width:700px;
+    font-size:1.3rem;
+}
+.btn{
+    margin-top:30px;
+    display:inline-block;
+    background:#d48127;
+    color:white;
+    padding:18px 35px;
+    border-radius:12px;
+    font-weight:bold;
+}
+.stats{
+    background:#161d2c;
+    color:white;
+    padding:80px 30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+}
+.stat{
+    text-align:center;
+}
+.stat-icon{
+    width:80px;
+    height:80px;
+    background:#3a2e28;
+    margin:auto;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#d48127;
+    font-size:28px;
+    margin-bottom:20px;
+}
+.stat h3{
+    font-size:3rem;
+}
+.stat p{
+    color:#aaa;
+}
+.section{
+    padding:80px 30px;
+}
+.section-tag{
+    color:#d48127;
+    font-weight:bold;
+    letter-spacing:3px;
+    margin-bottom:10px;
+}
+.section h2{
+    font-size:3.5rem;
+    margin-bottom:25px;
+}
+.section-text{
+    max-width:900px;
+    color:#70798c;
+    font-size:1.3rem;
+}
+.features{
+    margin-top:35px;
+}
+.features li{
+    list-style:none;
+    margin:15px 0;
+    color:#70798c;
+    font-size:1.2rem;
+}
+.features i{
+    color:#d48127;
+    margin-right:10px;
+}
+.dark-btn{
+    display:inline-block;
+    margin-top:30px;
+    background:#1b2233;
+    color:white;
+    padding:18px 35px;
+    border-radius:12px;
+}
+.listings{
+    padding:80px 30px;
+}
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+.card img{
+    height:220px;
+    width:100%;
+    object-fit:cover;
+}
+.card-content{
+    padding:20px;
+}
+.price{
+    color:#d48127;
+    font-weight:bold;
+    font-size:1.4rem;
+}
+.card h3{
+    margin:10px 0;
+}
+.values{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+.value-card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+.value-icon{
+    width:70px;
+    height:70px;
+    background:#f4ece2;
+    border-radius:18px;
+    color:#d48127;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    margin-bottom:20px;
+}
+.team{
+    text-align:center;
+}
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+    margin-top:40px;
+}
+.member img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:25px;
+    margin:auto;
+}
+.member h3{
+    margin-top:20px;
+}
+.role{
+    color:#d48127;
+    font-weight:bold;
+}
+.cta{
+    text-align:center;
+    padding:100px 30px;
+}
+.cta h2{
+    font-size:3.5rem;
+}
+.cta p{
+    color:#70798c;
+    max-width:700px;
+    margin:20px auto;
+    font-size:1.2rem;
+}
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+.secondary{
+    background:white;
+    border:2px solid #ddd;
+    color:#1f2430;
+}
+footer{
+    background:#161d2c;
+    color:white;
+    padding:70px 30px;
+}
+.footer-top{
+    margin-bottom:40px;
+}
+.footer-top p{
+    color:#aaa;
+    margin-top:15px;
+    max-width:600px;
+}
+.social{
+    margin-top:25px;
+}
+.social a{
+    color:white;
+    margin-right:15px;
+    font-size:1.4rem;
+}
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+.footer-grid h3{
+    margin-bottom:20px;
+}
+.footer-grid p{
+    color:#aaa;
+    margin-bottom:10px;
+}
+.copyright{
+    margin-top:40px;
+    text-align:center;
+    color:#aaa;
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:20px;
+}
+@media(max-width:768px){
+.hero h2{
+    font-size:2.8rem;
+}
+.section h2,
+.cta h2{
+    font-size:2.5rem;
+}
+.logo h1{
+    font-size:1.6rem;
+}
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-house"></i>
+        </div>
+        <h1>Prestige<span>Realty</span></h1>
+    </div>
+    <nav aria-label="Primary navigation">
+        <button class="menu" aria-label="Open navigation menu">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+    </nav>
+</header>
+<main>
+<section class="hero">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Modern luxury residence with landscaped grounds and large windows" srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=768 768w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1280 1280w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920 1920w" sizes="100vw">
+    <div class="hero-overlay">
+        <div class="tag">YOUR DREAM HOME AWAITS</div>
+        <h2>Find the Perfect Place to Call Home</h2>
+        <p>
+            From luxury penthouses to family estates, we connect you with
+            properties that match your lifestyle.
+        </p>
+        <a href="#" class="btn">Get Started Today →</a>
+    </div>
+</section>
+<section class="stats">
+    <div class="stat">
+        <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>2,400+</h3>
+        <p>Properties Sold</p>
+    </div>
+    <div class="stat">
+        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+        <h3>1,800+</h3>
+        <p>Happy Clients</p>
+    </div>
+    <div class="stat">
+        <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>18+</h3>
+        <p>Years Experience</p>
+    </div>
+    <div class="stat">
+        <div class="stat-icon"><i class="fa-regular fa-star"></i></div>
+        <h3>98%</h3>
+        <p>Client Satisfaction</p>
+    </div>
+</section>
+<section class="section">
+    <div class="section-tag">WHY CHOOSE US</div>
+    <h2>Redefining the Real Estate Experience</h2>
+    <p class="section-text">
+        At Prestige Realty, we believe finding your ideal home should be
+        an exciting journey. Our seasoned professionals provide expert
+        guidance and personalized service.
+    </p>
+    <ul class="features">
+        <li><i class="fa-solid fa-check"></i>Access to exclusive listings</li>
+        <li><i class="fa-solid fa-check"></i>Dedicated agent for each client</li>
+        <li><i class="fa-solid fa-check"></i>Transparent pricing</li>
+        <li><i class="fa-solid fa-check"></i>End-to-end support</li>
+    </ul>
+    <a href="#" class="dark-btn">About Our Company →</a>
+</section>
+<section class="listings">
+    <div class="section-tag">FEATURED PROPERTIES</div>
+    <h2>Handpicked Listings</h2>
+    <div class="cards">
+        <div class="card">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Luxury penthouse residence with expansive city views and contemporary architecture" srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=480 480w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800 800w" sizes="(max-width: 768px) 100vw, 33vw">
+            <div class="card-content">
+                <div class="price">$4,850,000</div>
+                <h3>Luxury Penthouse Suite</h3>
+                <p>Upper East Side, New York</p>
+            </div>
+        </div>
+        <div class="card">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="Modern waterfront villa overlooking the shoreline with outdoor living spaces" srcset="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=480 480w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800 800w" sizes="(max-width: 768px) 100vw, 33vw">
+            <div class="card-content">
+                <div class="price">$2,995,000</div>
+                <h3>Modern Waterfront Villa</h3>
+                <p>Miami Beach, Florida</p>
+            </div>
+        </div>
+        <div class="card">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" alt="Contemporary downtown loft featuring open-plan interiors and large industrial windows" srcset="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=480 480w, https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800 800w" sizes="(max-width: 768px) 100vw, 33vw">
+            <div class="card-content">
+                <div class="price">$1,750,000</div>
+                <h3>Downtown Executive Loft</h3>
+                <p>SoHo, New York</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="section-tag">WHAT WE STAND FOR</div>
+    <h2>Our Core Values</h2>
+    <div class="values">
+        <div class="value-card">
+            <div class="value-icon"><i class="fa-regular fa-heart"></i></div>
+            <h3>Client First</h3>
+            <p>Your goals are our goals.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon"><i class="fa-solid fa-award"></i></div>
+            <h3>Excellence</h3>
+            <p>Highest standards in every interaction.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Precision</h3>
+            <p>Attention to detail and data-driven decisions.</p>
+        </div>
+    </div>
+</section>
+<section class="section team">
+    <h2>Meet Our Team</h2>
+    <div class="team-grid">
+        <div class="member">
+            <img loading="lazy" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait of Victoria Harmon, Founder and CEO of Prestige Realty" srcset="https://randomuser.me/api/portraits/women/44.jpg 220w" sizes="220px">
+            <h3>Victoria Harmon</h3>
+            <div class="role">Founder & CEO</div>
+            <p>18 years of luxury real estate experience.</p>
+        </div>
+        <div class="member">
+            <img loading="lazy" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait of Marcus Chen, Senior Property Advisor at Prestige Realty" srcset="https://randomuser.me/api/portraits/men/32.jpg 220w" sizes="220px">
+            <h3>Marcus Chen</h3>
+            <div class="role">Senior Property Advisor</div>
+            <p>Specializes in premium residential investments.</p>
+        </div>
+        <div class="member">
+            <img loading="lazy" src="https://randomuser.me/api/portraits/men/41.jpg" alt="Portrait of David Okafor, Commercial Real Estate Lead at Prestige Realty" srcset="https://randomuser.me/api/portraits/men/41.jpg 220w" sizes="220px">
+            <h3>David Okafor</h3>
+            <div class="role">Commercial Real Estate Lead</div>
+            <p>Expert in acquisitions and mixed-use developments.</p>
+        </div>
+    </div>
+</section>
+<section class="cta">
+    <h2>Ready to Find Your Dream Home?</h2>
+    <p>
+        Our expert agents are standing by to guide you through every step
+        of your real estate journey.
+    </p>
+    <div class="cta-buttons">
+        <a href="#" class="btn">Explore Services</a>
+        <a href="#" class="btn secondary">Contact an Agent</a>
+    </div>
+</section>
+</main>
+<footer>
+<div class="footer-top">
+    <div class="logo">
+        <div class="logo-icon">
+            <i class="fa-solid fa-house"></i>
+        </div>
+        <div role="heading" aria-level="2">Prestige<span>Realty</span></div>
+    </div>
+    <p>
+        Your trusted partner in finding exceptional properties.
+        We turn the complex into simple.
+    </p>
+    <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</div>
+<div class="footer-grid">
+<nav aria-label="Footer navigation">
+<div>
+<h2>Navigation</h2>
+<p>Home</p>
+<p>About Us</p>
+<p>Services</p>
+<p>Blog</p>
+</div>
+</nav>
+<div>
+<h2>Services</h2>
+<p>Property Buying</p>
+<p>Property Selling</p>
+<p>Rental Services</p>
+<p>Property Management</p>
+</div>
+<div>
+<h2>Contact</h2>
+<p>123 Prestige Avenue, New York</p>
+<p>+1 (555) 234-5678</p>
+<p>hello@prestigerealty.com</p>
+</div>
+</div>
+<div class="copyright">
+© 2026 Prestige Realty. All Rights Reserved.
+</div>
+</footer>
+</body>
+</html>
